@@ -5,7 +5,7 @@
  string text = File.ReadAllText(filepath);
  var letterFrequencyDict = new SortedDictionary<char, int>();
  var totalLetters = 0;
- foreach (var c in text.Where(c => !char.IsPunctuation(c) && c != '\0' && c != ' '))
+ foreach (var c in text.Where(c => !char.IsPunctuation(c) && c != '\0' && c != ' ' && c != '\n'))
  {
   if (!letterFrequencyDict.ContainsKey(c)) { letterFrequencyDict.Add(c, 1);}
   else { letterFrequencyDict[c]++;}
